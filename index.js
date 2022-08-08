@@ -11,7 +11,6 @@ const userRoute = require("./routes/userRouter");
 const orderRoute = require("./routes/orderRouter");
 const productRoute = require("./routes/productRouter");
 const cartRoute = require("./routes/cartRouter");
-const authRoute = require("./routes/authRouter");
 // Configure environment file
 dotenv.config();
 // Use json object in application we've to add this
@@ -38,7 +37,6 @@ app.get("/",(req,res)=>{
 });
 
 // Use different routes
-app.use("/auth",authRoute);
 app.use("/users",userRoute);
 app.use("/cart",cartRoute);
 app.use("/orders",orderRoute);
@@ -46,6 +44,6 @@ app.use("/products",productRoute);
 
 // To run this application we've to specify port number
 // 2nd parameter is call back function
-app.listen(process.env.PORT || 1000, ()=>{
+app.listen(process.env.PORT || 5000, ()=>{
     console.log("Back end working");
 })
